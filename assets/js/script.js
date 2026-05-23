@@ -141,7 +141,20 @@ contactForm.addEventListener("submit", async function(e) {
 
     if (response.ok) {
 
-      alert("✅ Message sent successfully!");
+      Swal.fire({
+  icon: 'success',
+  title: 'Message Sent!',
+  text: 'Thanks for contacting me. I will contact you as soon as Possible.😊',
+  confirmButtonColor: '#ff004f',
+  background: '#1e1e1e',
+  color: '#ffffff',
+  showClass: {
+    popup: 'animate__animated animate__zoomIn'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__zoomOut'
+  }
+});
 
       contactForm.reset();
 
@@ -149,13 +162,25 @@ contactForm.addEventListener("submit", async function(e) {
 
     } else {
 
-      alert("❌ Failed to send message!");
+      Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Something went wrong! Please try again. 😊',
+  confirmButtonColor: '#ff004f'
+});
 
     }
 
   } catch (error) {
 
-    alert("⚠️ Network error!");
+    Swal.fire({
+    icon: 'warning',
+    title: 'Network Error!',
+    text: 'Please check your internet connection.',
+    confirmButtonColor: '#ff004f',
+    background: '#1e1e1e',
+    color: '#ffffff'
+  });
 
   }
 
