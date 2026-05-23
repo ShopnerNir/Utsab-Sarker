@@ -173,15 +173,6 @@ contactForm.addEventListener("submit", async function(e) {
 
   } catch (error) {
 
-    Swal.fire({
-    icon: 'warning',
-    title: 'Network Error!',
-    text: 'Please check your internet connection.',
-    confirmButtonColor: '#ff004f',
-    background: '#1e1e1e',
-    color: '#ffffff'
-  });
-
   }
 
 });
