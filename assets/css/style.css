@@ -813,6 +813,24 @@ main {
 }
 
 
+.grade-box {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.grade-box h5 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.grade-score {
+  font-weight: bold;
+  color: green;
+}
+
 /**
  * skills 
  */
