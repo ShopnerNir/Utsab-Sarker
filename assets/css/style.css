@@ -56,15 +56,19 @@
 
 	body.light-theme {
 
-  --eerie-black-1: hsl(0, 0%, 100%);
-  --eerie-black-2: hsl(0, 0%, 97%);
-  --onyx: hsl(0, 0%, 100%);
-  --jet: hsl(0, 0%, 95%);
+  --eerie-black-1: hsl(0, 0%, 96%);
+  --eerie-black-2: hsl(0, 0%, 94%);
+  --onyx: hsl(0, 0%, 98%);
+  --jet: hsl(0, 0%, 92%);
 
-  --white-1: hsl(0, 0%, 10%);
-  --white-2: hsl(0, 0%, 20%);
-  --light-gray: hsl(0, 0%, 40%);
-  --light-gray-70: hsla(0, 0%, 40%, 0.7);
+  --white-1: hsl(0, 0%, 15%);
+  --white-2: hsl(0, 0%, 25%);
+
+  --light-gray: hsl(0, 0%, 45%);
+  --light-gray-70: hsla(0, 0%, 45%, 0.7);
+		--card-bg: hsl(0, 0%, 96%);
+  --card-bg-2: hsl(0, 0%, 94%);
+  --border-color: hsl(0, 0%, 85%);
 	}
 	
 
@@ -1915,3 +1919,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 #themeBtn:hover {
   opacity: 0.7;
 }
+
+
+.card,
+.sidebar,
+.box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
