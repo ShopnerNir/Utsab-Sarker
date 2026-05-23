@@ -818,13 +818,17 @@ main {
   padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 12px;
-  background: transparent; /* শুধু বর্ডার, কোনো ব্যাকগ্রাউন্ড না */
+  background: transparent;
+  white-space: nowrap; /* পুরো বক্স এক লাইনে রাখবে */
 }
 
 .grade-box h5 {
   margin: 0;
   font-weight: normal;
-  white-space: nowrap; /* এক লাইনে রাখবে */
+  display: flex;       /* এক লাইনে সাজানোর জন্য */
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap; /* নিশ্চিতভাবে wrap বন্ধ */
 }
 
 .grade-score {
