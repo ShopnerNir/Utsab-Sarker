@@ -150,7 +150,16 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { 
+  background: var(--smoky-black); 
+  color: var(--white-1);
+  transition: background var(--transition-1), color var(--transition-1);
+}
+
+/* যখন light-theme একটিভ হবে তখন ব্যাকগ্রাউন্ড হালকা রঙের হবে */
+body.light-theme {
+  background: var(--eerie-black-1); 
+}
 
 /*-----------------------------------*\
   #REUSED STYLE
