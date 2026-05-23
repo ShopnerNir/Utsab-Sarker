@@ -118,7 +118,49 @@ for (let i = 0; i < filterBtn.length; i++) {
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+const formBtn = document.querySelector("[data-form-btn]")
+
+
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+
+  try {
+
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (response.ok) {
+
+      alert("✅ Message sent successfully!");
+
+      contactForm.reset();
+
+      formBtn.setAttribute("disabled", "disabled");
+
+    } else {
+
+      alert("❌ Failed to send message!");
+
+    }
+
+  } catch (error) {
+
+    alert("⚠️ Network error!");
+
+  }
+
+});
+
 
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
