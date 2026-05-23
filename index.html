@@ -1226,20 +1226,19 @@
 
 
 
-  <script>
+<script>
 function toggleTheme() {
-  document.body.classList.toggle("dark-theme");
-  document.body.classList.toggle("light-theme");
-
-  const btn = document.getElementById("themeBtn");
-
-  if (document.body.classList.contains("dark-theme")) {
-    btn.innerHTML = "☀️";
+  const body = document.body;
+  body.classList.toggle("light-theme");
+  
+  const themeBtn = document.getElementById("themeBtn");
+  if (body.classList.contains("light-theme")) {
+    themeBtn.innerHTML = "🌙"; // ডে মোডে থাকলে নাইট মোডে যাওয়ার জন্য চাঁদ দেখাবে
   } else {
-    btn.innerHTML = "🌙";
+    themeBtn.innerHTML = "☀️"; // নাইট মোডে থাকলে ডে মোডে যাওয়ার জন্য সূর্য দেখাবে
   }
 }
-  </script>
+</script>
   
 </body>
 
