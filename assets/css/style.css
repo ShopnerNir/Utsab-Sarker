@@ -1564,28 +1564,61 @@ textarea.form-input::-webkit-resizer { display: none; }
    * REUSED STYLE
    */
 
-  .sidebar, article { width: 700px; }
+  /* Reused Styles এর ভেতর এই পরিবর্তনগুলো করুন */
 
-  .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+.sidebar,
+article {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color); /* বর্ডার কালার ডাইনামিক */
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+  transition: background var(--transition-1), border-color var(--transition-1);
+}
 
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--border-color); /* সেপারেটর বা টান কালো/সাদা হবে */
+  margin: 16px 0;
+}
 
+.h2, .h3, .h4, .h5 {
+  color: var(--text-secondary); /* হেডিংগুলোর কালার */
+}
 
-  /**
-   * SIDEBAR
-   */
+.about-text {
+  color: var(--text-muted); /* সাধারণ টেক্সটের কালার */
+}
 
-  .contacts-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 15px;
-  }
+/* সার্ভিস আইটেম এবং অন্যান্য বক্সের বর্ডার ও ব্যাকগ্রাউন্ড ঠিক করার জন্য */
+.service-item, .content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+/* যদি কোনো ::before বা গ্রাডিয়েন্ট ব্যাকগ্রাউন্ড বক্সকে ঢেকে দেয়, তবে সেটা রিমুভ করতে পারেন অথবা নিচের কোড যুক্ত করুন */
+.service-item::before, .content-card::before, .icon-box::before {
+  display: none; /* আগের ফিক্সড ডার্ক গ্রাডিয়েন্টগুলো বন্ধ করার জন্য */
+}
 
+/* মেনুবার বা নেভবার (Navbar) এর জন্য */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg); /* ডাইনামিক ব্যাকগ্রাউন্ড */
+  border: 1px solid var(--border-color); /* মেনুবারের বর্ডার */
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-2);
+  z-index: 5;
+}
 
-
-  /**
-   * NAVBAR
-   */
-
-  .navbar-link { --fs-8: 15px; }
+.navbar-link {
+  color: var(--text-muted);
+}
 
 
 
