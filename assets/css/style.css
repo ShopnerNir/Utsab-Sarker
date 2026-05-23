@@ -1,75 +1,58 @@
-
 :root {
 
   /**
-   * colors
+   * colors (Default Night Mode)
    */
 
-  /* gradient */
+  /* background & text colors */
+  --bg-color: hsl(0, 0%, 7%);             /* সম্পূর্ণ কালো */
+  --card-bg: hsl(240, 2%, 12%);           /* বক্সের ব্যাকগ্রাউন্ড */
+  --card-bg-2: hsl(240, 2%, 13%);         /* ইনার বক্স বা সেপারেটর */
+  --text-primary: hsl(0, 0%, 100%);       /* সাদা লেখা ১ */
+  --text-secondary: hsl(0, 0%, 98%);     /* সাদা লেখা ২ */
+  --text-muted: hsl(0, 0%, 84%);          /* হালকা ধূসর লেখা */
+  --border-color: hsl(0, 0%, 22%);        /* বক্স এবং মেনুবারের বর্ডার */
+  
+  /* Constant colors across themes */
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --vegas-gold: hsl(45, 54%, 58%);
+  --light-gray-70: hsla(0, 0%, 84%, 0.7);
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
+  /* gradients */
   --text-gradient-yellow: linear-gradient(
     to right, 
     hsl(45, 100%, 72%), 
     hsl(35, 100%, 68%)
   );
 
-  /* solid */
+  /* typography & layout constants */
+  --ff-poppins: 'Poppins', sans-serif;
+  --fs-1: 24px; --fs-2: 18px; --fs-3: 17px; --fs-4: 16px; 
+  --fs-5: 15px; --fs-6: 14px; --fs-7: 13px; --fs-8: 11px;
+  --fw-300: 300; --fw-400: 400; --fw-500: 500; --fw-600: 600;
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+}
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+/* Day Mode (Light Theme) */
+body.light-theme {
+  --bg-color: hsl(0, 0%, 100%);           /* একদম সাদা ব্যাকগ্রাউন্ড */
+  --card-bg: hsl(0, 0%, 100%);            /* বক্সের ব্যাকগ্রাউন্ডও সাদা */
+  --card-bg-2: hsl(0, 0%, 95%);
+  --text-primary: hsl(0, 0%, 0%);         /* লেখা একদম কালো */
+  --text-secondary: hsl(0, 0%, 10%);       /* লেখা সুন্দর কালো */
+  --text-muted: hsl(0, 0%, 20%);
+  --border-color: hsl(0, 0%, 0%);         /* সকল বক্স ও মেনুবারের বর্ডার সুন্দর কালো */
+  --light-gray-70: hsla(0, 0%, 0%, 0.7);
+}
 
-
-	body.light-theme {
-
-  --eerie-black-1: hsl(0, 0%, 96%);
-  --eerie-black-2: hsl(0, 0%, 94%);
-  --onyx: hsl(0, 0%, 98%);
-  --jet: hsl(0, 0%, 92%);
-
-  --white-1: hsl(0, 0%, 15%);
-  --white-2: hsl(0, 0%, 25%);
-
-  --light-gray: hsl(0, 0%, 45%);
-  --light-gray-70: hsla(0, 0%, 45%, 0.7);
-		--card-bg: hsl(0, 0%, 96%);
-  --card-bg-2: hsl(0, 0%, 94%);
-  --border-color: hsl(0, 0%, 85%);
-	}
+body { 
+  background: var(--bg-color); 
+  color: var(--text-primary);
+  transition: background var(--transition-1), color var(--transition-1);
+}
 	
 
   /**
