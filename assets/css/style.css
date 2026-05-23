@@ -1928,3 +1928,15 @@ textarea.form-input::-webkit-resizer { display: none; }
   border: 1px solid var(--border-color);
 }
 
+
+.location-line{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.location-line ion-icon{
+  font-size: 18px;
+  flex-shrink: 0;
+}
