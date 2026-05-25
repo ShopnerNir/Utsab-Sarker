@@ -384,49 +384,42 @@
         </section>
 
 
-        <!--
-          - testimonials modal
-        -->
+        // testimonials variables
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
 
-        <div class="modal-container" data-modal-container>
+// modal variable
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
 
-          <div class="overlay" data-overlay></div>
+// modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
 
-          <section class="testimonials-modal">
+// গ্লোবাল ক্লিক লিসেনার: প্রথমবার সাইটে ঢোকার ১ সেকেন্ডের মধ্যেও যদি কেউ ক্লিক করে, এটি কাজ করবে
+document.addEventListener("click", function (event) {
+  // ইউজার রিভিউ বক্সের যেকোনো জায়গায় ক্লিক করলেই মেইন আইটেমটি খুঁজে নেবে
+  const targetItem = event.target.closest("[data-testimonials-item]");
+  
+  if (targetItem) {
+    // ডাটা সংগ্রহ এবং মডালে সেট করা
+    modalImg.src = targetItem.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = targetItem.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = targetItem.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = targetItem.querySelector("[data-testimonials-text]").innerHTML;
 
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
+    // পপআপ সচল করা
+    testimonialsModalFunc();
+  }
+});
 
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
+// ক্লোজ বাটন এবং ব্যাকগ্রাউন্ড ওভারলেতে ক্লিক করলে পপআপ বন্ধ করার লজিক
+if (modalCloseBtn) modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+if (overlay) overlay.addEventListener("click", testimonialsModalFunc);
 
 
         <!--
