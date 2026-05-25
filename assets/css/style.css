@@ -322,6 +322,9 @@ main {
   max-height: 120px;
   overflow: hidden;
   transition: var(--transition-2);
+
+  border: 1px solid #ccc; /* border added */
+  border-radius: 8px;     /* optional */
 }
 
 .sidebar.active { max-height: 405px; }
@@ -335,7 +338,7 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
+  background:#fff;
   border-radius: 20px;
 }
 
