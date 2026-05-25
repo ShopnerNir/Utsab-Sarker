@@ -1332,15 +1332,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-  /**
-   * #NAVBAR
-   */
-
-  .navbar { border-radius: 20px 20px 0 0; }
-
-  .navbar-list { gap: 20px; }
-
-  .navbar-link { --fs-8: 14px; }
+  
 
 
 
@@ -1534,12 +1526,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
 
-
-  /**
-   * NAVBAR
-   */
-
-  .navbar-link { --fs-8: 15px; }
+   
 
 
 
@@ -1866,59 +1853,8 @@ body {
   animation: fluidGradient 12s ease infinite !important;
 }
 
-/* সাইডবার, মেইন কন্টেন্ট এবং নেভবারকে ট্রান্সপারেন্ট গ্লাস লুক দেওয়া */
-.sidebar, 
-.main-content, 
-.navbar {
-  background: rgba(255, 255, 255, 0.03) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: var(--shadow-4) !important;
-}
-
-/* নেভবারের মোবাইল ভার্সনের ব্যাকগ্রাউন্ড ঠিক করা */
-@media (max-width: 1023px) {
-  .navbar {
-    background: rgba(15, 15, 20, 0.8) !important;
-  }
-}
-
-/* সাইডবারের কন্টাক্ট ইনফো বক্সগুলোর ব্যাকগ্রাউন্ড গ্লাস করা */
-.contact-item {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-}
-
-/* বাটন এবং স্ক্রলবার যেন সুন্দর দেখায় */
-.form-btn {
-  background: linear-gradient(135deg, rgba(255, 219, 112, 0.15), rgba(255, 219, 112, 0.05)) !important;
-  border: 1px solid var(--vegas-gold) !important;
-}
-
-/* ফ্লুইড গ্রেডিয়েন্ট অ্যানিমেশনের কি-ফ্রেম */
-@keyframes fluidGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
-    /*--------------------------------------
-  ৫. ন্যাভিগেশন বার (মেনু সিস্টেম)
---------------------------------------*/
-.navbar {
-  position: fixed; bottom: 0; left: 0; width: 100%;
-  background: var(--navbar-bg); backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-color); border-radius: 15px 15px 0 0; box-shadow: var(--shadow-2); z-index: 10;
-  transition: background var(--transition-1), border-color var(--transition-1);
-}
-.navbar-list { display: flex; justify-content: space-around; align-items: center; padding: 10px; }
-.navbar-link { font-size: 12px; color: var(--text-muted); font-weight: 500; transition: color var(--transition-1); }
-.navbar-link.active { color: var(--orange-yellow-crayola); font-weight: 600; }
-
 /*--------------------------------------
-  ৮.充স্পনসিভ মিডিয়া কোয়েরি (PC/Tablet লেআউট)
+  ৮. রেসপনসিভ মিডিয়া কোয়েরি (PC/Tablet লেআউট)
 --------------------------------------*/
 @media (min-width: 768px) {
   .sidebar, article { width: 680px; margin-inline: auto; }
@@ -1931,15 +1867,34 @@ body {
 }
 
 @media (min-width: 1024px) {
+  /* ডেক্সটপে মেইন কার্ডের সাপেক্ষে নেভবারকে লক করার জন্য এটি আবশ্যিক */
+  .main-content {
+    position: relative !important;
+  }
+
   .sidebar, article { width: 950px; }
-  .navbar { position: absolute; bottom: auto; top: 0; right: 0; width: max-content; border-radius: 0 20px; padding: 0 15px; border-top: none; border-left: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-  .navbar-list { gap: 20px; }
+  
+  /* আপনার শুরুর আসল ডেক্সটপ কোড */
+  .navbar { 
+    position: absolute !important; 
+    bottom: auto !important; 
+    top: 0 !important; 
+    right: 0 !important; 
+    left: auto !important; /* মোবাইলের লেফট জিরো বাতিল করার জন্য */
+    width: max-content !important; 
+    border-radius: 0 20px !important; 
+    padding: 0 15px !important; 
+    border-top: none !important; 
+    border-left: 1px solid var(--border-color) !important; 
+    border-bottom: 1px solid var(--border-color) !important; 
+  }
+  .navbar-list { gap: 20px !important; }
   .service-list { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 1250px) {
   main { max-width: 1200px; margin-inline: auto; display: flex; gap: 25px; align-items: stretch; margin-top: 60px; }
-  .main-content { width: 75%; position: relative; }
+  .main-content { width: 75%; position: relative !important; }
   .sidebar { width: 25%; position: sticky; top: 60px; height: max-content; padding-top: 40px; }
   .sidebar-info { flex-direction: column; text-align: center; }
   .avatar-box img { width: 130px; }
