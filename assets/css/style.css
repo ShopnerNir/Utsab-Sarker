@@ -1904,85 +1904,46 @@ body {
 }
 
 
-    /* =========================================================================
-   রিসেট: শুরুর ফাইলের সাপেক্ষে নিখুঁত মোবাইল ও ডেক্সটপ পজিশন ফিক্স
-   ========================================================================= */
+    /*--------------------------------------
+  ৫. ন্যাভিগেশন বার (মেনু সিস্টেম)
+--------------------------------------*/
+.navbar {
+  position: fixed; bottom: 0; left: 0; width: 100%;
+  background: var(--navbar-bg); backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color); border-radius: 15px 15px 0 0; box-shadow: var(--shadow-2); z-index: 10;
+  transition: background var(--transition-1), border-color var(--transition-1);
+}
+.navbar-list { display: flex; justify-content: space-around; align-items: center; padding: 10px; }
+.navbar-link { font-size: 12px; color: var(--text-muted); font-weight: 500; transition: color var(--transition-1); }
+.navbar-link.active { color: var(--orange-yellow-crayola); font-weight: 600; }
 
-/* ১. ল্যাপটপ এবং ডেক্সটপ ভিউ (1024px বা তার বেশি) */
-@media (min-width: 1024px) {
-  .main-content {
-    position: relative !important;
-  }
-
-  .navbar {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: auto !important;
-    left: auto !important;
-    width: max-content !important;
-    background: var(--bg-gradient-jet) !important;
-    border: 1px solid var(--border-gradient-onyx) !important;
-    border-radius: 0 20px 0 20px !important;
-    padding: 0 20px !important;
-    box-shadow: none !important;
-    z-index: 10 !important;
-  }
-
-  .navbar-list {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px !important;
-    padding: 0 !important;
-  }
-
-  .navbar-link {
-    font-size: var(--fs-6) !important;
-    padding: 15px 10px !important;
-  }
+/*--------------------------------------
+  ৮.充স্পনসিভ মিডিয়া কোয়েরি (PC/Tablet লেআউট)
+--------------------------------------*/
+@media (min-width: 768px) {
+  .sidebar, article { width: 680px; margin-inline: auto; }
+  .contacts-list { grid-template-columns: 1fr 1fr; }
+  .input-wrapper { grid-template-columns: 1fr 1fr; }
+  .project-list { grid-template-columns: 1fr 1fr; }
+  .sidebar { max-height: max-content; }
+  .sidebar-info_more { opacity: 1; visibility: visible; }
+  .info_more-btn { display: none; }
 }
 
-/* ২. মোবাইল ও ট্যাবলেট ভিউ (1023px বা তার কম) */
-@media (max-width: 1023px) {
-  html, body {
-    overflow-x: hidden !important;
-  }
+@media (min-width: 1024px) {
+  .sidebar, article { width: 950px; }
+  .navbar { position: absolute; bottom: auto; top: 0; right: 0; width: max-content; border-radius: 0 20px; padding: 0 15px; border-top: none; border-left: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+  .navbar-list { gap: 20px; }
+  .service-list { grid-template-columns: 1fr 1fr; }
+}
 
-  /* শুরুর ফাইলের মতো মেইন কন্টেনারের সাপেক্ষে পজিশন ভেঙে সরাসরি ভিউপোর্টে লক করা */
-  .navbar {
-    position: fixed !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    background: rgba(30, 30, 40, 0.95) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 12px 12px 0 0 !important;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3) !important;
-    z-index: 999999 !important; /* স্ক্রিনের সব কন্টেন্টের ওপরে ভেসে থাকার জন্য */
-    margin: 0 !important;
-    padding: 12px 0 !important;
-  }
-
-  .navbar-list {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 15px !important;
-    width: 100% !important;
-    padding: 0 10px !important;
-  }
-
-  .navbar-link {
-    font-size: var(--fs-7) !important;
-    padding: 5px 10px !important;
-  }
-
-  main {
-    padding-bottom: 80px !important;
-  }
+@media (min-width: 1250px) {
+  main { max-width: 1200px; margin-inline: auto; display: flex; gap: 25px; align-items: stretch; margin-top: 60px; }
+  .main-content { width: 75%; position: relative; }
+  .sidebar { width: 25%; position: sticky; top: 60px; height: max-content; padding-top: 40px; }
+  .sidebar-info { flex-direction: column; text-align: center; }
+  .avatar-box img { width: 130px; }
+  .contacts-list { grid-template-columns: 1fr; }
+  .social-list { justify-content: center; }
+  .sidebar, article { width: auto; margin: 0; }
 }
