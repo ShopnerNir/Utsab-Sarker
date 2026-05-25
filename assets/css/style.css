@@ -322,9 +322,8 @@ main {
   max-height: 120px;
   overflow: hidden;
   transition: var(--transition-2);
-
-  border: 1px solid #ccc; /* border added */
-  border-radius: 8px;     /* optional */
+  border: 2px solid #fff; /* border added */
+  border-radius: 25px;     /* optional */
 }
 
 .sidebar.active { max-height: 405px; }
