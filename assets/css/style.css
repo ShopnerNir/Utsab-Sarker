@@ -1964,3 +1964,50 @@ textarea.form-input::-webkit-resizer { display: none; }
   font-size: 18px;
   flex-shrink: 0;
 }
+
+/* =========================================================================
+   চূড়ান্ত ফিক্স: রঙিন অ্যানিমেটেড ব্যাকগ্রাউন্ড এবং গ্লাস ইফেক্ট ওভাররাইড কোড
+   ========================================================================= */
+
+body {
+  background: linear-gradient(-45deg, #1e1b4b, #311042, #112240, #0f172a) !important;
+  background-size: 400% 400% !important;
+  animation: fluidGradient 12s ease infinite !important;
+}
+
+/* সাইডবার, মেইন কন্টেন্ট এবং নেভবারকে ট্রান্সপারেন্ট গ্লাস লুক দেওয়া */
+.sidebar, 
+.main-content, 
+.navbar {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: var(--shadow-4) !important;
+}
+
+/* নেভবারের মোবাইল ভার্সনের ব্যাকগ্রাউন্ড ঠিক করা */
+@media (max-width: 1023px) {
+  .navbar {
+    background: rgba(15, 15, 20, 0.8) !important;
+  }
+}
+
+/* সাইডবারের কন্টাক্ট ইনফো বক্সগুলোর ব্যাকগ্রাউন্ড গ্লাস করা */
+.contact-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* বাটন এবং স্ক্রলবার যেন সুন্দর দেখায় */
+.form-btn {
+  background: linear-gradient(135deg, rgba(255, 219, 112, 0.15), rgba(255, 219, 112, 0.05)) !important;
+  border: 1px solid var(--vegas-gold) !important;
+}
+
+/* ফ্লুইড গ্রেডিয়েন্ট অ্যানিমেশনের কি-ফ্রেম */
+@keyframes fluidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
