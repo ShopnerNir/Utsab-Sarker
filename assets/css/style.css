@@ -1904,88 +1904,12 @@ body {
 }
 
 
-/* =========================================================================
-   মডার্ন রেসপন্সিভ মেনুবার (Navbar Responsive Position & Style)
+    /* =========================================================================
+   রিসেট: শুরুর ফাইলের সাপেক্ষে নিখুঁত মোবাইল ও ডেক্সটপ পজিশন ফিক্স
    ========================================================================= */
 
-/* ১. সব স্ক্রিনের জন্য সাধারণ মেনুবার লিংক স্টাইল */
-.navbar-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-}
-
-.navbar-link {
-  color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 20px 7px;
-  transition: color var(--transition-1);
-}
-
-.navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
-
-.navbar-link.active { color: var(--orange-yellow-crayola); }
-
-/* =========================================================================
-   মোবাইল স্ক্রিন ফিক্স: ভিউপোর্ট ফিক্সড পজিশন লক
-   ========================================================================= */
-
-@media screen and (max-width: 1023px) {
-  /* মোবাইল ব্রাউজারের রিলেটিভ প্যারেন্ট জটলা কাটানোর নিয়ম */
-  html, body {
-    overflow-x: hidden !important;
-  }
-
-  /* মেনুবারটিকে পেজের সাপেক্ষ থেকে মুক্ত করে সরাসরি মোবাইল স্ক্রিনের নিচে লক করা */
-  .navbar {
-    position: fixed !important;
-    transform: translateZ(0); /* হার্ডওয়্যার এক্সিলারেশন চালু করে স্ক্রিনের সাথে লক রাখার জন্য */
-    -webkit-transform: translateZ(0);
-    top: auto !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    
-    /* ব্যাকগ্রাউন্ড ও ব্লার স্টাইল */
-    background: rgba(20, 15, 30, 0.95) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 12px 12px 0 0 !important;
-    
-    /* অন্য সব এলিমেন্টকে পেছনে ফেলে স্ক্রিনের ওপরে ভেসে থাকার ইনডেক্স */
-    z-index: 999999 !important; 
-    margin: 0 !important;
-    padding: 10px 0 !important;
-  }
-
-  .navbar-list {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 10px !important;
-    width: 100% !important;
-    padding: 0 10px !important;
-  }
-
-  .navbar-link {
-    font-size: var(--fs-8) !important;
-    padding: 8px 12px !important;
-  }
-
-  /* পেজের শেষ লেখা যেন মেনুর নিচে ঢেকে না যায় */
-  main {
-    padding-bottom: 90px !important;
-  }
-}
-
-/* ২. শুধুমাত্র ল্যাপটপ এবং ডেক্সটপ স্ক্রিনের জন্য (১০২৪ পিক্সেল বা তার বেশি) */
-@media screen and (min-width: 1024px) {
+/* ১. ল্যাপটপ এবং ডেক্সটপ ভিউ (1024px বা তার বেশি) */
+@media (min-width: 1024px) {
   .main-content {
     position: relative !important;
   }
@@ -2006,6 +1930,8 @@ body {
   }
 
   .navbar-list {
+    display: flex !important;
+    flex-direction: row !important;
     gap: 20px !important;
     padding: 0 !important;
   }
@@ -2013,5 +1939,50 @@ body {
   .navbar-link {
     font-size: var(--fs-6) !important;
     padding: 15px 10px !important;
+  }
+}
+
+/* ২. মোবাইল ও ট্যাবলেট ভিউ (1023px বা তার কম) */
+@media (max-width: 1023px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  /* শুরুর ফাইলের মতো মেইন কন্টেনারের সাপেক্ষে পজিশন ভেঙে সরাসরি ভিউপোর্টে লক করা */
+  .navbar {
+    position: fixed !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: rgba(30, 30, 40, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px 12px 0 0 !important;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 999999 !important; /* স্ক্রিনের সব কন্টেন্টের ওপরে ভেসে থাকার জন্য */
+    margin: 0 !important;
+    padding: 12px 0 !important;
+  }
+
+  .navbar-list {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+
+  .navbar-link {
+    font-size: var(--fs-7) !important;
+    padding: 5px 10px !important;
+  }
+
+  main {
+    padding-bottom: 80px !important;
   }
 }
