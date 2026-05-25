@@ -50,7 +50,10 @@
         <div class="info-content">
           <h1 class="name" title="Utsab Sarker">Utsab Sarker</h1>
 
-          <p class="title">Web developer</p>
+          <p class="title">
+  <span id="typing-text"></span>
+  <span class="cursor">|</span>
+          </p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -1340,6 +1343,56 @@ function toggleTheme() {
   }
 }
   </script>
+
+  <script>
+  const words = [
+    "Web Developer",
+    "Photographer",
+    "Writer",
+    "Traveler"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typingText = document.getElementById("typing-text");
+
+  function typeEffect() {
+
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      typingText.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+
+        setTimeout(typeEffect, 1500);
+        return;
+      }
+
+    } else {
+
+      typingText.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    const speed = isDeleting ? 80 : 120;
+
+    setTimeout(typeEffect, speed);
+  }
+
+  typeEffect();
+</script>
+
+</body>
   
 </body>
 
