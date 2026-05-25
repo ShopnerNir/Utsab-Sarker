@@ -1,6 +1,8 @@
 
+
 /**
- * CUSTOM PROPERTY
+ * CUSTOM PROPERTY — Aurora Neon Theme
+ * Modern colorful glassmorphism + neon accent
  */
 
 :root {
@@ -9,29 +11,70 @@
    * colors
    */
 
-  /* gradient */
-  --bg-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
-  --bg-gradient-jet: rgba(255, 255, 255, 0.05);
-  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
-  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 71%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+  /* gradient backgrounds */
+  --bg-gradient-main:
+    linear-gradient(135deg,
+      #0f172a 0%,
+      #111827 25%,
+      #1e1b4b 55%,
+      #312e81 100%);
 
-  /* solid */
-  --smoky-black: #0c0c14; 
-  --eerie-black-1: rgba(255, 255, 255, 0.06); 
-  --eerie-black-2: rgba(255, 255, 255, 0.04);
-  --jet: rgba(255, 255, 255, 0.08);
-  --onyx: hsl(240, 1%, 17%);
+  --bg-gradient-card:
+    linear-gradient(145deg,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.04) 100%);
+
+  --bg-gradient-purple:
+    linear-gradient(135deg,
+      rgba(168,85,247,0.35) 0%,
+      rgba(59,130,246,0.15) 100%);
+
+  --bg-gradient-cyan:
+    linear-gradient(135deg,
+      rgba(34,211,238,0.25) 0%,
+      rgba(99,102,241,0.12) 100%);
+
+  --bg-gradient-pink:
+    linear-gradient(135deg,
+      rgba(244,114,182,0.25) 0%,
+      rgba(168,85,247,0.1) 100%);
+
+  --border-gradient:
+    linear-gradient(135deg,
+      rgba(255,255,255,0.25),
+      rgba(255,255,255,0.05));
+
+  --text-gradient:
+    linear-gradient(to right,
+      #22d3ee,
+      #a855f7,
+      #f472b6);
+
+  /* solid colors */
+  --smoky-black: #070b14;
+  --eerie-black-1: rgba(255,255,255,0.08);
+  --eerie-black-2: rgba(255,255,255,0.04);
+
+  --jet: rgba(255,255,255,0.1);
+  --onyx: #151925;
+
   --white-1: #ffffff;
-  --white-2: #e2e8f0;
-  --light-gray: #cbd5e1;
-  --light-gray-70: rgba(226, 232, 240, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --white-2: #e5ecff;
 
-  /* Accent Color */
-  --vegas-gold: #ffdb70;
-  --orange-yellow-crayola: #ffa100;
+  --light-gray: #b6c2e1;
+  --light-gray-70: rgba(182,194,225,0.7);
+
+  /* Accent palette */
+  --electric-blue: #38bdf8;
+  --neon-purple: #a855f7;
+  --hot-pink: #ec4899;
+  --mint-green: #2dd4bf;
+  --soft-orange: #fb923c;
+  --gold: #facc15;
+
+  /* primary accent */
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #22d3ee;
 
   /**
    * typography
@@ -41,9 +84,9 @@
   --ff-poppins: 'Poppins', sans-serif;
 
   /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
+  --fs-1: 26px;
+  --fs-2: 20px;
+  --fs-3: 18px;
   --fs-4: 16px;
   --fs-5: 15px;
   --fs-6: 14px;
@@ -55,20 +98,48 @@
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
+  --fw-700: 700;
 
   /**
-   * shadow
+   * shadows
    */
-  --shadow-1: 0 15px 35px rgba(0, 0, 0, 0.2);
-  --shadow-2: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --shadow-3: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-4: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+  --shadow-1:
+    0 10px 30px rgba(0,0,0,0.25);
+
+  --shadow-2:
+    0 8px 20px rgba(139,92,246,0.18);
+
+  --shadow-3:
+    0 0 25px rgba(34,211,238,0.15);
+
+  --shadow-4:
+    0 25px 60px rgba(0,0,0,0.35);
+
+  --shadow-neon:
+    0 0 12px rgba(168,85,247,0.4),
+    0 0 30px rgba(34,211,238,0.25);
+
+  /**
+   * border radius
+   */
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  /**
+   * blur effect
+   */
+
+  --blur-glass: blur(18px);
 
   /**
    * transition
    */
+
   --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease;
+  --transition-2: 0.45s cubic-bezier(.2,.8,.2,1);
 
 }
 
