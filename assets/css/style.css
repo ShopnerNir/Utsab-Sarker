@@ -20,56 +20,62 @@
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
     hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
+:root {
+  /* মডার্ন গ্লাস এবং লাইট টেক্সট থিম */
+  --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.03) 100%
   );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+  
+  --bg-gradient-jet: rgba(255, 255, 255, 0.05);
+  --smoky-black: #0c0c14; /* ব্যাকগ্রাউন্ডের বেস কালার */
+  --eerie-black-1: rgba(255, 255, 255, 0.07); /* কার্ড বা বক্সের ব্যাকগ্রাউন্ড */
+  --eerie-black-2: rgba(255, 255, 255, 0.05);
+  --jet: rgba(255, 255, 255, 0.08);
 
-  /* solid */
+  /* টেক্সট কালার সবসময় সাদা ও উজ্জ্বল থাকবে যেন রঙিন ব্যাকগ্রাউন্ডে চমৎকার দেখায় */
+  --white-1: #ffffff;
+  --white-2: #e2e8f0;
+  --light-gray: #cbd5e1;
+  --light-gray-70: rgba(226, 232, 240, 0.7);
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  /* গোল্ডেন হাইলাইট (বাটন ও অ্যাকসেন্ট কালার) */
+  --vegas-gold: #ffdb70;
+  --orange-yellow-crayola: #ffa100;
 
+  /* মডার্ন সফট শ্যাডো এবং বর্ডার */
+  --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  --shadow-1: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --shadow-2: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-4: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
 
-	body.light-theme {
+/* বর্তমান সময়ের সবচেয়ে উপযুক্ত এবং ট্রেন্ডি ফ্লুইড অ্যানিমেটেড ব্যাকগ্রাউন্ড */
+body {
+  background: linear-gradient(-45deg, #1e1b4b, #311042, #112240, #0f172a);
+  background-size: 400% 400%;
+  animation: fluidGradient 12s ease infinite;
+  font-family: var(--ff-poppins);
+  color: var(--white-1);
+  margin: 0;
+  padding: 0;
+}
 
-  --eerie-black-1: hsl(0, 0%, 96%);
-  --eerie-black-2: hsl(0, 0%, 94%);
-  --onyx: hsl(0, 0%, 98%);
-  --jet: hsl(0, 0%, 92%);
+/* গ্লাস ইফেক্ট আরও সুন্দর করার জন্য সাইডবার এবং মেইন কন্টেন্টে একটু ব্লার যোগ করা */
+.sidebar, .main-content, .navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-  --white-1: hsl(0, 0%, 15%);
-  --white-2: hsl(0, 0%, 25%);
-
-  --light-gray: hsl(0, 0%, 45%);
-  --light-gray-70: hsla(0, 0%, 45%, 0.7);
-		--card-bg: hsl(0, 0%, 96%);
-  --card-bg-2: hsl(0, 0%, 94%);
-  --border-color: hsl(0, 0%, 85%);
-	}
+/* ব্যাকগ্রাউন্ডের রঙগুলো যেভাবে স্মুথলি চেঞ্জ হবে */
+@keyframes fluidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 	
 
   /**
