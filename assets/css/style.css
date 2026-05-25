@@ -1,56 +1,37 @@
-
-:root {
-
-  /**
-   * colors
-   */
-
-  /* gradient */
-
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+/**
+ * Olf/New Combined Standard Root Variables
+ */
 :root {
   /* মডার্ন গ্লাস এবং লাইট টেক্সট থিম */
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    rgba(255, 255, 255, 0.1) 0%, 
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  
+  --bg-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
   --bg-gradient-jet: rgba(255, 255, 255, 0.05);
-  --smoky-black: #0c0c14; /* ব্যাকগ্রাউন্ডের বেস কালার */
-  --eerie-black-1: rgba(255, 255, 255, 0.07); /* কার্ড বা বক্সের ব্যাকগ্রাউন্ড */
-  --eerie-black-2: rgba(255, 255, 255, 0.05);
+  --smoky-black: #0c0c14; 
+  --eerie-black-1: rgba(255, 255, 255, 0.06); 
+  --eerie-black-2: rgba(255, 255, 255, 0.04);
   --jet: rgba(255, 255, 255, 0.08);
 
-  /* টেক্সট কালার সবসময় সাদা ও উজ্জ্বল থাকবে যেন রঙিন ব্যাকগ্রাউন্ডে চমৎকার দেখায় */
+  /* টেক্সট কালার */
   --white-1: #ffffff;
   --white-2: #e2e8f0;
   --light-gray: #cbd5e1;
   --light-gray-70: rgba(226, 232, 240, 0.7);
 
-  /* গোল্ডেন হাইলাইট (বাটন ও অ্যাকসেন্ট কালার) */
+  /* গোল্ডেন হাইলাইট */
   --vegas-gold: #ffdb70;
   --orange-yellow-crayola: #ffa100;
 
-  /* মডার্ন সফট শ্যাডো এবং বর্ডার */
+  /* ফন্ট এবং শ্যাডো */
+  --ff-poppins: 'Poppins', sans-serif;
   --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
   --shadow-1: 0 15px 35px rgba(0, 0, 0, 0.2);
   --shadow-2: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-3: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-4: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
+
+
+
+
 
 /* বর্তমান সময়ের সবচেয়ে উপযুক্ত এবং ট্রেন্ডি ফ্লুইড অ্যানিমেটেড ব্যাকগ্রাউন্ড */
 body {
