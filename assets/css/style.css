@@ -1964,41 +1964,40 @@ body {
 
 
 /* =========================================================================
-   চূড়ান্ত মেনুবার এবং পজিশন ফিক্স (Navbar & Layout Absolute Fix)
+   চূড়ান্ত মেনুবার ফিক্স: ডেক্সটপ ও মোবাইল পজিশন লক কোড
    ========================================================================= */
 
-/* ডেক্সটপ স্ক্রিনের জন্য মেনুবার উপরে ডান কোণায় ফিক্সড করার কোড (1024px এর বেশি) */
+/* ল্যাপটপ এবং ডেক্সটপ স্ক্রিনের জন্য মেনুবার উপরে ডান কোণায় লক করার নিয়ম (1024px বা তার বেশি) */
 @media (min-width: 1024px) {
-  .main-content {
+  body .main-content {
     position: relative !important;
-    min-width: 75% !important;
-    width: 75% !important;
-    display: block !important;
   }
 
-  .navbar {
+  body .navbar {
     position: absolute !important;
-    bottom: auto !important;
     top: 0 !important;
     right: 0 !important;
+    bottom: auto !important;
     left: auto !important;
     width: max-content !important;
     border-radius: 0 20px 0 20px !important;
     padding: 0 20px !important;
-    z-index: 10 !important;
+    margin: 0 !important;
+    z-index: 100 !important;
   }
 }
 
-/* ট্যাবলেট এবং মোবাইল স্ক্রিনের জন্য মেনুবার নিচে ফিক্সড রাখার কোড (1023px এর কম) */
+/* ট্যাবলেট এবং মোবাইল স্ক্রিনের জন্য মেনুবার নিচে ফিক্সড রাখার নিয়ম (1023px বা তার কম) */
 @media (max-width: 1023px) {
-  .navbar {
+  body .navbar {
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
+    top: auto !important;
+    right: auto !important;
     width: 100% !important;
-    z-index: 50 !important;
     border-radius: 12px 12px 0 0 !important;
-    margin-top: 0 !important;
-    display: block !important;
+    margin: 0 !important;
+    z-index: 999 !important;
   }
 }
