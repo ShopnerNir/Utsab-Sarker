@@ -1964,16 +1964,16 @@ body {
 
 
 /* =========================================================================
-   চূড়ান্ত মেনুবার ফিক্স: ডেক্সটপ ও মোবাইল পজিশন লক কোড
+   চূড়ান্ত মেনুবার ফিক্স: ডেক্সটপ ও মোবাইল পজিশন ১০০% লক কোড
    ========================================================================= */
 
 /* ল্যাপটপ এবং ডেক্সটপ স্ক্রিনের জন্য মেনুবার উপরে ডান কোণায় লক করার নিয়ম (1024px বা তার বেশি) */
 @media (min-width: 1024px) {
-  body .main-content {
+  html body .main-content {
     position: relative !important;
   }
 
-  body .navbar {
+  html body .navbar {
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
@@ -1984,12 +1984,13 @@ body {
     padding: 0 20px !important;
     margin: 0 !important;
     z-index: 100 !important;
+    box-shadow: none !important;
   }
 }
 
 /* ট্যাবলেট এবং মোবাইল স্ক্রিনের জন্য মেনুবার নিচে ফিক্সড রাখার নিয়ম (1023px বা তার কম) */
 @media (max-width: 1023px) {
-  body .navbar {
+  html body .navbar {
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
