@@ -54,9 +54,9 @@
 
 /* বর্তমান সময়ের সবচেয়ে উপযুক্ত এবং ট্রেন্ডি ফ্লুইড অ্যানিমেটেড ব্যাকগ্রাউন্ড */
 body {
-  background: linear-gradient(-45deg, #1e1b4b, #311042, #112240, #0f172a);
-  background-size: 400% 400%;
-  animation: fluidGradient 12s ease infinite;
+  background: linear-gradient(-45deg, #1e1b4b, #311042, #112240, #0f172a) !important;
+  background-size: 400% 400% !important;
+  animation: fluidGradient 12s ease infinite !important;
   font-family: var(--ff-poppins);
   color: var(--white-1);
   margin: 0;
