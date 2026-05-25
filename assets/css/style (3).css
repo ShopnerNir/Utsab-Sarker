@@ -40,36 +40,23 @@
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+--jet: #334155;                     /* বর্ডার কালার */
+  --onyx: #1e293b;                    /* মূল ডার্ক ব্যাকগ্রাউন্ড */
+  --eerie-black-1: #1e293b;
+  --eerie-black-2: #1e293b;
+  --smoky-black: #1e293b;             /* বডি ব্যাকগ্রাউন্ড */
+  
+  /* কার্ডের ভেতরের ব্যাকগ্রাউন্ড কালার (যা স্ক্রিনশটে দেখা যাচ্ছে) */
+  --bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    rgba(51, 65, 85, 0.3) 0%, 
+    rgba(30, 41, 59, 0) 100%
+  ), #2e3d52; /* কার্ডের জন্য হালকা ব্লু-গ্রে টোন */
+
+  /* আপনার বাকি কোড... */
+}
 
 
-	body.light-theme {
-
-  --eerie-black-1: hsl(0, 0%, 96%);
-  --eerie-black-2: hsl(0, 0%, 94%);
-  --onyx: hsl(0, 0%, 98%);
-  --jet: hsl(0, 0%, 92%);
-
-  --white-1: hsl(0, 0%, 15%);
-  --white-2: hsl(0, 0%, 25%);
-
-  --light-gray: hsl(0, 0%, 45%);
-  --light-gray-70: hsla(0, 0%, 45%, 0.7);
-		--card-bg: hsl(0, 0%, 96%);
-  --card-bg-2: hsl(0, 0%, 94%);
-  --border-color: hsl(0, 0%, 85%);
-	}
 	
 
   /**
