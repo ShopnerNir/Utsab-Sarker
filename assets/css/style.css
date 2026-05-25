@@ -355,6 +355,24 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .info_more-btn {
