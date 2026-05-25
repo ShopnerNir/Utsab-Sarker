@@ -362,7 +362,7 @@ main {
 
 .cursor {
   margin-left: 2px;
-  animation: blink 0.7s infinite;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
