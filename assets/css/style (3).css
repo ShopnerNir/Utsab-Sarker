@@ -145,7 +145,7 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { background: #1e293b; } /* স্ক্রিনশটের মতো ডার্ক স্লেট ব্লু কালার */
 
 
 
