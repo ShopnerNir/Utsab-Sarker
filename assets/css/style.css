@@ -1,91 +1,89 @@
-
-
 /**
- * CUSTOM PROPERTY — Aurora Neon Theme
- * Modern colorful glassmorphism + neon accent
+ * PREMIUM AURORA UI THEME
+ * Elegant • Colorful • Modern • Smooth
  */
 
 :root {
 
-  /**
-   * colors
-   */
+  /* ================= COLORS ================= */
 
-  /* gradient backgrounds */
-  --bg-gradient-main:
-    linear-gradient(135deg,
-      #0f172a 0%,
-      #111827 25%,
-      #1e1b4b 55%,
-      #312e81 100%);
+  --bg-main:
+    linear-gradient(
+      135deg,
+      #09090f 0%,
+      #111827 30%,
+      #1e1b4b 65%,
+      #312e81 100%
+    );
 
-  --bg-gradient-card:
-    linear-gradient(145deg,
-      rgba(255,255,255,0.12) 0%,
-      rgba(255,255,255,0.04) 100%);
+  --bg-card:
+    rgba(255,255,255,0.06);
 
-  --bg-gradient-purple:
-    linear-gradient(135deg,
-      rgba(168,85,247,0.35) 0%,
-      rgba(59,130,246,0.15) 100%);
+  --bg-card-hover:
+    rgba(255,255,255,0.10);
 
-  --bg-gradient-cyan:
-    linear-gradient(135deg,
-      rgba(34,211,238,0.25) 0%,
-      rgba(99,102,241,0.12) 100%);
+  --border-color:
+    rgba(255,255,255,0.08);
 
-  --bg-gradient-pink:
-    linear-gradient(135deg,
-      rgba(244,114,182,0.25) 0%,
-      rgba(168,85,247,0.1) 100%);
+  --surface-dark:
+    #111827;
 
-  --border-gradient:
-    linear-gradient(135deg,
-      rgba(255,255,255,0.25),
-      rgba(255,255,255,0.05));
+  --surface-light:
+    #1f2937;
 
-  --text-gradient:
-    linear-gradient(to right,
-      #22d3ee,
-      #a855f7,
-      #f472b6);
-
-  /* solid colors */
-  --smoky-black: #070b14;
-  --eerie-black-1: rgba(255,255,255,0.08);
-  --eerie-black-2: rgba(255,255,255,0.04);
-
-  --jet: rgba(255,255,255,0.1);
-  --onyx: #151925;
+  /* TEXT */
 
   --white-1: #ffffff;
-  --white-2: #e5ecff;
+  --white-2: #f3f4f6;
 
-  --light-gray: #b6c2e1;
-  --light-gray-70: rgba(182,194,225,0.7);
+  --light-gray: #d1d5db;
+  --light-gray-70: rgba(209,213,219,0.7);
 
-  /* Accent palette */
-  --electric-blue: #38bdf8;
-  --neon-purple: #a855f7;
-  --hot-pink: #ec4899;
-  --mint-green: #2dd4bf;
-  --soft-orange: #fb923c;
-  --gold: #facc15;
+  /* ACCENT COLORS */
 
-  /* primary accent */
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #22d3ee;
+  --primary: #7c3aed;
+  --secondary: #06b6d4;
+  --pink: #ec4899;
+  --orange: #f59e0b;
+  --green: #10b981;
 
-  /**
-   * typography
-   */
+  /* GRADIENTS */
 
-  /* font-family */
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #06b6d4
+    );
+
+  --gradient-pink:
+    linear-gradient(
+      135deg,
+      #ec4899,
+      #8b5cf6
+    );
+
+  --gradient-orange:
+    linear-gradient(
+      135deg,
+      #f59e0b,
+      #ef4444
+    );
+
+  --gradient-text:
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #a855f7,
+      #ec4899
+    );
+
+  /* ================= TYPOGRAPHY ================= */
+
   --ff-poppins: 'Poppins', sans-serif;
 
-  /* font-size */
-  --fs-1: 26px;
-  --fs-2: 20px;
+  --fs-1: 28px;
+  --fs-2: 22px;
   --fs-3: 18px;
   --fs-4: 16px;
   --fs-5: 15px;
@@ -93,53 +91,36 @@
   --fs-7: 13px;
   --fs-8: 11px;
 
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
 
-  /**
-   * shadows
-   */
+  /* ================= SHADOW ================= */
 
   --shadow-1:
-    0 10px 30px rgba(0,0,0,0.25);
+    0 4px 20px rgba(0,0,0,0.25);
 
   --shadow-2:
-    0 8px 20px rgba(139,92,246,0.18);
+    0 10px 35px rgba(124,58,237,0.25);
 
   --shadow-3:
-    0 0 25px rgba(34,211,238,0.15);
+    0 10px 40px rgba(6,182,212,0.18);
 
-  --shadow-4:
-    0 25px 60px rgba(0,0,0,0.35);
+  --shadow-glow:
+    0 0 15px rgba(139,92,246,0.35);
 
-  --shadow-neon:
-    0 0 12px rgba(168,85,247,0.4),
-    0 0 30px rgba(34,211,238,0.25);
-
-  /**
-   * border radius
-   */
+  /* ================= RADIUS ================= */
 
   --radius-sm: 12px;
   --radius-md: 18px;
-  --radius-lg: 28px;
+  --radius-lg: 26px;
 
-  /**
-   * blur effect
-   */
-
-  --blur-glass: blur(18px);
-
-  /**
-   * transition
-   */
+  /* ================= TRANSITION ================= */
 
   --transition-1: 0.25s ease;
-  --transition-2: 0.45s cubic-bezier(.2,.8,.2,1);
+  --transition-2: 0.4s cubic-bezier(.2,.8,.2,1);
 
 }
 
