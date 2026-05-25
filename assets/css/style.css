@@ -278,6 +278,12 @@ main {
   max-height: 120px;
   overflow: hidden;
   transition: var(--transition-2);
+  background: var(--bg-gradient-onyx) !important;
+  border: 1px solid var(--border-gradient-onyx) !important;
+  border-radius: 20px !important;
+  padding: 20px !important;
+  box-shadow: var(--shadow-1), 0 0 1px 1px rgba(255, 255, 255, 0.1) inset !important;
+  z-index: 1;
 }
 
 .sidebar.active { max-height: 405px; }
