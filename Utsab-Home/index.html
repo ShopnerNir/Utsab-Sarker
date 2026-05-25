@@ -939,7 +939,33 @@
       sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
     }
   </script>
-</body>
+<script>
+  function fixMobileMenu() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      if (window.innerWidth < 1024) {
+        navbar.style.setProperty('position', 'fixed', 'important');
+        navbar.style.setProperty('bottom', '0', 'important');
+        navbar.style.setProperty('left', '0', 'important');
+        navbar.style.setProperty('top', 'auto', 'important');
+        navbar.style.setProperty('width', '100%', 'important');
+        navbar.style.setProperty('z-index', '999999', 'important');
+      } else {
+        // ডেক্সটপের জন্য আগের রূপ ফিরিয়ে দেওয়া
+        navbar.style.setProperty('position', 'absolute', 'important');
+        navbar.style.setProperty('top', '0', 'important');
+        navbar.style.setProperty('right', '0', 'important');
+        navbar.style.setProperty('bottom', 'auto', 'important');
+        navbar.style.setProperty('left', 'auto', 'important');
+        navbar.style.setProperty('width', 'max-content', 'important');
+      }
+    }
+  }
+
+  // পেজ লোড এবং স্ক্রিন ছোট-বড় করার সময় রান হবে
+  window.addEventListener('load', fixMobileMenu);
+  window.addEventListener('resize', fixMobileMenu);
+</script>
   
 </body>
 
