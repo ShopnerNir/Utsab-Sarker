@@ -1952,18 +1952,11 @@ body {
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
 /* =========================================================================
-   চূড়ান্ত মোবাইল মেনুবার পজিশন ফিক্স (viewport Absolute Lock)
+   চূড়ান্ত মোবাইল ও ডেক্সটপ নেভবার পজিশন ফিক্স 
    ========================================================================= */
 
-/* শুধুমাত্র মোবাইল এবং ট্যাবলেট স্ক্রিনের জন্য (১০২৩ পিক্সেল বা তার কম) */
+/* ১. শুধুমাত্র মোবাইল এবং ট্যাবলেট স্ক্রিনের জন্য (১০২৩ পিক্সেল বা তার কম) */
 @media screen and (max-width: 1023px) {
-  
-  /* মোবাইল ব্রাউজারের পজিশন জটলা কাটানোর জন্য মেইন বডি ফিক্স */
-  html, body {
-    overflow-x: hidden !important;
-  }
-
-  /* মেনুবারটিকে মোবাইল স্ক্রিনের একদম নিচে আঠার মতো আটকে রাখার চূড়ান্ত নিয়ম */
   .navbar {
     position: fixed !important;
     bottom: 0 !important;
@@ -1971,22 +1964,20 @@ body {
     top: auto !important;
     right: auto !important;
     width: 100% !important;
-    height: auto !important;
     
-    /* ডিজাইন এবং গ্লাস ইফেক্ট */
-    background: rgba(30, 30, 40, 0.95) !important;
+    /* ব্যাকগ্রাউন্ড ও ব্লার ইফেক্ট */
+    background: rgba(20, 15, 30, 0.95) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 12px 12px 0 0 !important;
     
-    /* স্ক্রিনের সবার ওপরে ভাসিয়ে রাখার জন্য জেনুইন ইনডেক্স */
-    z-index: 999999 !important; 
+    /* জেনুইন ইনডেক্স যেন স্ক্রিনের একদম ওপরে ভেসে থাকে */
+    z-index: 999999 !important;
     margin: 0 !important;
     padding: 10px 0 !important;
   }
 
-  /* মেনুর ভেতরের তালিকা ঠিক করা */
   .navbar-list {
     display: flex !important;
     justify-content: center !important;
@@ -1995,13 +1986,12 @@ body {
     width: 100% !important;
   }
 
-  /* মোবাইলের লিংকের সাইজ ঠিক করা */
   .navbar-link {
     font-size: var(--fs-8) !important;
-    padding: 8px 12px !important;
+    padding: 10px 12px !important;
   }
 
-  /* পেজের শেষ অংশ যেন মেনুর নিচে ঢেকে না যায় */
+  /* পেজের শেষ লেখা যেন মেনুর নিচে ঢেকে না যায় */
   main {
     padding-bottom: 90px !important;
   }
@@ -2009,11 +1999,11 @@ body {
 
 /* ২. শুধুমাত্র ল্যাপটপ এবং ডেক্সটপ স্ক্রিনের জন্য (১০২৪ পিক্সেল বা তার বেশি) */
 @media screen and (min-width: 1024px) {
-  html body .main-content {
+  .main-content {
     position: relative !important;
   }
 
-  html body .navbar {
+  .navbar {
     position: absolute !important;
     top: 0 !important;
     right: 0 !important;
@@ -2028,12 +2018,12 @@ body {
     z-index: 10 !important;
   }
 
-  html body .navbar-list {
+  .navbar-list {
     gap: 20px !important;
     padding: 0 !important;
   }
 
-  html body .navbar-link {
+  .navbar-link {
     font-size: var(--fs-6) !important;
     padding: 15px 10px !important;
   }
