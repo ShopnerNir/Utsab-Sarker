@@ -1952,62 +1952,71 @@ body {
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
 /* =========================================================================
-   মোবাইল স্ক্রিন ফিক্স: মেনুবার স্ক্রিনের নিচে ফিক্সড রাখার চূড়ান্ত কোড (All Mobile & Tablet)
+   চূড়ান্ত মোবাইল ও ডেক্সটপ মেনুবার পজিশন সেপারেশন কোড
    ========================================================================= */
 
-@media (max-width: 1023px) {
+/* ১. শুধুমাত্র মোবাইল এবং ট্যাবলেট স্ক্রিনের জন্য (১০২৩ পিক্সেল বা তার কম) */
+@media screen and (max-width: 1023px) {
+  html body {
+    overflow-x: hidden !important;
+  }
+  
   html body .navbar {
-    position: fixed !important; /* এটি পেজের নিচে যাওয়া আটকে স্ক্রিনের নিচে ভাসিয়ে রাখবে */
-    bottom: 0 !important;
-    left: 0 !important;
+    position: fixed !important; /* স্ক্রিনের সাথে লক করে রাখবে */
     top: auto !important;
     right: auto !important;
+    left: 0 !important;
+    bottom: 0 !important;      /* স্ক্রিনের একদম নিচে আটকে থাকবে */
     width: 100% !important;
-    background: rgba(20, 15, 30, 0.85) !important; /* হালকা ট্রান্সপারেন্ট ডার্ক গ্লাস */
+    background: rgba(30, 30, 40, 0.9) !important; /* ডার্ক গ্লাস ইফেক্ট */
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px 12px 0 0 !important;
-    z-index: 9999 !important; /* যেন কোনো কনটেন্ট এর ওপরে চলে না আসে */
+    z-index: 99999 !important;  /* সব কন্টেন্টের ওপরে ভাসমান থাকবে */
     margin: 0 !important;
-    padding: 5px 0 !important;
+    padding: 10px 0 !important;
   }
 
-  /* মেনুবার নিচে ফিক্সড থাকায় পেজের শেষ লেখা যেন মেনুর নিচে ঢেকে না যায় */
+  /* মোবাইল মেনুর লিংকগুলোর সাইজ ঠিক করা */
+  html body .navbar-link {
+    font-size: var(--fs-8) !important;
+    padding: 10px 15px !important;
+  }
+
+  /* পেজের শেষ অংশ যেন মেনুর নিচে ঢেকে না যায় */
   html body main {
-    padding-bottom: 80px !important; 
+    padding-bottom: 80px !important;
   }
 }
 
-
-/* ৩. ল্যাপটপ ও ডেক্সটপ স্ক্রিনের নিয়ম (1024px বা তার বেশি) */
-@media (min-width: 1024px) {
-  .main-content {
+/* ২. শুধুমাত্র ল্যাপটপ এবং ডেক্সটপ স্ক্রিনের জন্য (১০২৪ পিক্সেল বা তার বেশি) */
+@media screen and (min-width: 1024px) {
+  html body .main-content {
     position: relative !important;
   }
 
-  .navbar {
-    position: absolute !important;
+  html body .navbar {
+    position: absolute !important; /* ডেক্সটপে মেইন বক্সের ভেতর থাকবে */
     top: 0 !important;
     right: 0 !important;
     bottom: auto !important;
     left: auto !important;
     width: max-content !important;
     background: var(--bg-gradient-jet) !important;
-    backdrop-filter: blur(10px) !important;
     border: 1px solid var(--border-gradient-onyx) !important;
     border-radius: 0 20px 0 20px !important;
     padding: 0 20px !important;
     box-shadow: none !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
   }
 
-  .navbar-list {
+  html body .navbar-list {
     gap: 20px !important;
     padding: 0 !important;
   }
 
-  .navbar-link {
+  html body .navbar-link {
     font-size: var(--fs-6) !important;
     padding: 15px 10px !important;
   }
